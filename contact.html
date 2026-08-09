@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Ali Lario</title>
+
+    <link rel="icon"
+          href="assets/icons/favicon.ico">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+    <!-- ========================================= -->
+    <!-- SHARED STYLES -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet"
+          href="assets/css/projects.css">
+
+    <!-- ========================================= -->
+    <!-- CONTACT STYLES -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet"
+          href="assets/css/contact.css">
+
+</head>
+
+<body>
+
+<!-- ==================================================
+     MOBILE / TABLET HEADER
+================================================== -->
+
+<header class="mobile-header">
+
+    <a
+        href="index.html"
+        class="mobile-brand">
+
+        Ali Lario
+
+    </a>
+
+    <button
+        class="mobile-menu-button"
+        id="mobile-menu-button"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false">
+
+        ☰
+
+    </button>
+
+</header>
+
+<div class="page">
+
+    <!-- ========================================= -->
+    <!-- SIDEBAR -->
+    <!-- ========================================= -->
+
+    <aside class="sidebar">
+
+        <div>
+
+            <a
+                href="index.html"
+                class="brand">
+
+                <h1>Ali Lario</h1>
+
+                <div class="divider"></div>
+
+                <p>
+
+                    Photography &amp; Videography
+
+                </p>
+
+            </a>
+
+            <nav class="sidebar-nav">
+
+                <a href="projects.html">
+
+                    Projects
+
+                </a>
+
+                <a href="journal.html">
+
+                    Journal
+
+                </a>
+
+                <a href="about.html">
+
+                    About
+
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="active">
+
+                    Contact
+
+                </a>
+
+            </nav>
+
+        </div>
+
+        <footer>
+
+            © 2026 Ali Lario
+
+            <br>
+
+            All Rights Reserved.
+
+        </footer>
+
+    </aside>
+
+    <!-- ========================================= -->
+    <!-- CONTACT -->
+    <!-- ========================================= -->
+
+    <main class="contact-content">
+
+        <section class="contact-info">
+
+            <h2>
+
+                Let's create something meaningful.
+
+            </h2>
+
+            <p class="contact-intro">
+
+                If you have a project in mind, I'd love to hear from you.
+
+            </p>
+
+            <div class="contact-block">
+
+                <span class="contact-label">
+
+                    Email
+
+                </span>
+
+                <a
+                    href="mailto:hello@alilario.com">
+
+                    hello@alilario.com
+
+                </a>
+
+            </div>
+
+            <div class="contact-block">
+
+                <span class="contact-label">
+
+                    Instagram
+
+                </span>
+
+                <a
+                    href="https://instagram.com/ali_lario"
+                    target="_blank"
+                    rel="noopener">
+
+                    @ali_lario
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- ==================================================
+     MOBILE / TABLET MENU
+================================================== -->
+
+<div
+    class="mobile-menu"
+    id="mobile-menu">
+
+    <!-- CLOSE -->
+
+    <button
+        class="mobile-menu-close"
+        id="mobile-menu-close"
+        type="button"
+        aria-label="Close menu">
+
+        ×
+
+    </button>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="mobile-menu-nav">
+
+        <a
+            href="projects.html"
+            data-mobile-category="architecture">
+
+            Architecture
+
+        </a>
+
+
+        <a
+            href="projects.html"
+            data-mobile-category="corporate">
+
+            Corporate
+
+        </a>
+
+
+        <a
+            href="projects.html"
+            data-mobile-category="wedding">
+
+            Wedding
+
+        </a>
+
+
+        <a href="journal.html">
+
+            Journal
+
+        </a>
+
+
+        <a href="about.html">
+
+            About
+
+        </a>
+
+
+        <a
+            href="contact.html"
+            class="active">
+
+            Contact
+
+        </a>
+
+    </nav>
+
+
+    <!-- COPYRIGHT -->
+
+    <div class="mobile-menu-footer">
+
+        © 2026 Ali Lario
+
+        <br>
+
+        All Rights Reserved.
+
+    </div>
+
+</div>
+
+<script>
+
+const menuButton =
+    document.getElementById("mobile-menu-button");
+
+const mobileMenu =
+    document.getElementById("mobile-menu");
+
+const menuClose =
+    document.getElementById("mobile-menu-close");
+
+
+function openMenu(){
+
+    if(!mobileMenu) return;
+
+    mobileMenu.classList.add("active");
+
+    document.body.classList.add("menu-open");
+
+    if(menuButton){
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+    }
+
+}
+
+
+function closeMenu(){
+
+    if(!mobileMenu) return;
+
+    mobileMenu.classList.remove("active");
+
+    document.body.classList.remove("menu-open");
+
+    if(menuButton){
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    }
+
+}
+
+
+if(menuButton){
+
+    menuButton.addEventListener(
+        "click",
+        openMenu
+    );
+
+}
+
+
+if(menuClose){
+
+    menuClose.addEventListener(
+        "click",
+        closeMenu
+    );
+
+}
+
+
+if(mobileMenu){
+
+    mobileMenu
+        .querySelectorAll("a")
+        .forEach(link=>{
+
+            link.addEventListener(
+                "click",
+                closeMenu
+            );
+
+        });
+
+}
+
+
+document.addEventListener(
+    "keydown",
+    (event)=>{
+
+        if(
+            event.key === "Escape" &&
+            mobileMenu &&
+            mobileMenu.classList.contains("active")
+        ){
+
+            closeMenu();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

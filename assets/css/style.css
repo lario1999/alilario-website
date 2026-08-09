@@ -1,0 +1,936 @@
+/* ==========================================================
+   ALILARIO.COM
+   Homepage v2.1
+   Responsive Refinement
+   ========================================================== */
+
+
+/* ==========================================================
+   RESET
+   ========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* ==========================================================
+   ROOT
+   ========================================================== */
+
+:root{
+
+    --white:#ffffff;
+    --dark:#222222;
+    --gray:#666666;
+    --light:#bbbbbb;
+
+    --overlay:rgba(0,0,0,.15);
+
+    --transition:.35s ease;
+
+}
+
+
+/* ==========================================================
+   BODY
+   ========================================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    overflow-x:hidden;
+
+    background:#ffffff;
+
+    padding:16px;
+
+}
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.hero{
+
+    position:fixed;
+
+    inset:10px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding-left:100px;
+
+    background-image:url("../images/hero.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    overflow:hidden;
+
+}
+
+
+/* ==========================================================
+   OVERLAY
+   ========================================================== */
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.15);
+
+    transition:background .8s ease;
+
+}
+
+
+/* ==========================================================
+   HERO CONTENT
+   ========================================================== */
+
+.hero-content{
+
+    position:absolute;
+
+    left:100px;
+
+    top:50%;
+
+    transform:translateY(-40%);
+
+    z-index:5;
+
+    color:white;
+
+    max-width:520px;
+
+    transition:
+        top .8s cubic-bezier(.22,1,.36,1),
+        transform .8s cubic-bezier(.22,1,.36,1);
+
+}
+
+
+/* ==========================================================
+   TITLE
+   ========================================================== */
+
+.hero h1{
+
+    font-size:50px;
+
+    font-weight:600;
+
+    letter-spacing:5px;
+
+    line-height:.7;
+
+    margin-bottom:8px;
+
+}
+
+
+/* ==========================================================
+   DIVIDER
+   ========================================================== */
+
+.divider{
+
+    width:312px;
+
+    height:1px;
+
+    background:white;
+
+    margin:30px 0 15px;
+
+}
+
+
+/* ==========================================================
+   SUBTITLE
+   ========================================================== */
+
+.hero h2{
+
+    font-size:24px;
+
+    font-weight:200;
+
+    margin-bottom:55px;
+
+}
+
+
+/* ==========================================================
+   TAGLINE
+   ========================================================== */
+
+.tagline{
+
+    font-size:20px;
+
+    font-weight:200;
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================================================
+   HERO NAVIGATION
+   ========================================================== */
+
+.hero-navigation{
+
+    position:absolute;
+
+    left:50%;
+
+    top:70%;
+
+    transform:translate(-50%,40px);
+
+    z-index:5;
+
+    opacity:0;
+
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.22,1,.36,1);
+
+}
+
+
+/* ==========================================================
+   NAV
+   ========================================================== */
+
+.hero-navigation nav{
+
+    display:flex;
+
+    gap:120px;
+
+}
+
+
+/* ==========================================================
+   LINKS
+   ========================================================== */
+
+.hero-navigation a{
+
+    position:relative;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:300;
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease,
+        color .35s ease;
+
+}
+
+
+/* ==========================================================
+   UNDERLINE
+   ========================================================== */
+
+.hero-navigation a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:1px;
+
+    background:white;
+
+    transform:translateX(-50%);
+
+    transition:width .35s ease;
+
+}
+
+
+.hero-navigation a:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+.hero-navigation a:hover::after{
+
+    width:32px;
+
+}
+
+
+/* ==========================================================
+   COPYRIGHT
+   ========================================================== */
+
+footer{
+
+    position:absolute;
+
+    left:10px;
+
+    bottom:10px;
+
+    z-index:5;
+
+}
+
+
+.copyright{
+
+    color:rgba(255,255,255,.7);
+
+    font-size:10px;
+
+    font-weight:300;
+
+    opacity:0;
+
+    transition:.8s ease;
+
+}
+
+
+/* ==========================================================
+   SCROLL SPACE
+   ========================================================== */
+
+.scroll-space{
+
+    height:220vh;
+
+}
+
+
+/* ==========================================================
+   TABLET
+   601px — 1024px
+========================================================== */
+
+@media (min-width:601px) and (max-width:1024px){
+
+    /* ------------------------------------------------------
+       HERO
+       ------------------------------------------------------ */
+
+    .hero{
+
+        padding-left:50px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       HERO CONTENT
+       ------------------------------------------------------ */
+
+    .hero-content{
+
+        left:50px;
+
+        transform:translate(0,-100%) !important;
+
+        max-width:520px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       TYPOGRAPHY
+       ------------------------------------------------------ */
+
+    .hero h1{
+
+        font-size:46px;
+
+        letter-spacing:2px;
+
+        outline: height 0.5em;
+
+    }
+
+
+    .divider{
+
+        width:220px;
+
+    }
+
+
+    .hero h2{
+
+        font-size:20px;
+
+    }
+
+
+    .tagline{
+
+        font-size:18px;
+
+        line-height:1.5;
+
+        white-space:nowrap;
+
+    }
+
+
+    /* ------------------------------------------------------
+       NAVIGATION
+       Always visible on tablet
+       ------------------------------------------------------ */
+
+    .hero-navigation{
+
+        left:50%;
+
+        top:auto;
+
+        bottom:90px;
+
+        transform:translateX(-50%) !important;
+
+        opacity:1 !important;
+
+    }
+
+
+    .hero-navigation nav{
+
+        flex-direction:row;
+
+        justify-content:center;
+
+        align-items:center;
+
+        gap:55px;
+
+        white-space:nowrap;
+
+    }
+
+
+    .hero-navigation a{
+
+        font-size:17px;
+
+        opacity:1 !important;
+
+        transform:none !important;
+
+    }
+
+
+    /* ------------------------------------------------------
+       COPYRIGHT
+       Hidden on homepage
+       ------------------------------------------------------ */
+
+    footer{
+
+        display:none;
+
+    }
+
+
+    /* ------------------------------------------------------
+       SCROLL SPACE
+       No unnecessary page scrolling
+       ------------------------------------------------------ */
+
+    .scroll-space{
+
+        display:none;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+   600px AND BELOW
+========================================================== */
+
+@media (max-width:600px){
+
+    /* ------------------------------------------------------
+       HERO
+       Keep existing image treatment
+       ------------------------------------------------------ */
+
+    .hero{
+
+        inset:10px;
+
+        padding:30px;
+
+        justify-content:center;
+
+        align-items:center;
+
+    }
+
+
+    /* ------------------------------------------------------
+       HERO CONTENT
+       Centered horizontally and slightly higher vertically
+       ------------------------------------------------------ */
+
+    .hero-content{
+
+        left:50%;
+
+        top:41%;
+
+        transform:translate(-50%,-50%) !important;
+
+        width:calc(100% - 60px);
+
+        max-width:520px;
+
+        text-align:center;
+
+    }
+
+
+    /* ------------------------------------------------------
+       TITLE
+       ------------------------------------------------------ */
+
+    .hero h1{
+
+        font-size:38px;
+
+        letter-spacing:2px;
+
+        outline: height 0.5em;
+
+        margin-bottom:0;
+
+    }
+
+
+    /* ------------------------------------------------------
+       DIVIDER
+       ------------------------------------------------------ */
+
+    .divider{
+
+        width:180px;
+
+        margin:22px auto 12px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       SUBTITLE
+       ------------------------------------------------------ */
+
+    .hero h2{
+
+        font-size:16px;
+
+        font-weight:300;
+
+        margin-bottom:38px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       TAGLINE
+       ------------------------------------------------------ */
+
+    .tagline{
+
+        font-size:15px;
+
+        line-height:1.55;
+
+        max-width:230px;
+
+        margin:0 auto;
+
+    }
+
+
+    /* ------------------------------------------------------
+       NAVIGATION
+       Centered at bottom
+       No scroll animation
+       ------------------------------------------------------ */
+
+    .hero-navigation{
+
+        left:50%;
+
+        top:auto;
+
+        bottom:65px;
+
+        transform:translateX(-50%) !important;
+
+        opacity:1 !important;
+
+        width:calc(100% - 40px);
+
+    }
+
+
+    .hero-navigation nav{
+
+        display:flex;
+
+        flex-direction:row;
+
+        justify-content:center;
+
+        align-items:center;
+
+        gap:24px;
+
+        width:100%;
+
+        white-space:nowrap;
+
+    }
+
+
+    .hero-navigation a{
+
+        font-size:14px;
+
+        font-weight:300;
+
+        opacity:1 !important;
+
+        transform:none !important;
+
+    }
+
+
+    /* ------------------------------------------------------
+       UNDERLINE
+       ------------------------------------------------------ */
+
+    .hero-navigation a::after{
+
+        bottom:-6px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       COPYRIGHT
+       Hidden on homepage
+       ------------------------------------------------------ */
+
+    footer{
+
+        display:none;
+
+    }
+
+
+    /* ------------------------------------------------------
+       SCROLL SPACE
+       No unnecessary page scrolling
+       ------------------------------------------------------ */
+
+    .scroll-space{
+
+        display:none;
+
+    }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL PHONES
+   380px AND BELOW
+========================================================== */
+
+@media (max-width:380px){
+
+    .hero-content{
+
+        width:calc(100% - 40px);
+
+    }
+
+
+    .hero h1{
+
+        font-size:34px;
+
+        letter-spacing:3px;
+
+    }
+
+
+    .hero h2{
+
+        font-size:14px;
+
+    }
+
+
+    .tagline{
+
+        font-size:14px;
+
+        max-width:210px;
+
+    }
+
+
+    .hero-navigation{
+
+        bottom:55px;
+
+    }
+
+
+    .hero-navigation nav{
+
+        gap:17px;
+
+    }
+
+
+    .hero-navigation a{
+
+        font-size:12px;
+
+    }
+
+}
+
+/* ==========================================================
+   LANDSCAPE TABLET
+   iPad landscape / similar
+========================================================== */
+
+@media (min-width:1025px) and (max-width:1200px)
+       and (orientation:landscape){
+
+    .hero-content{
+
+        left:50px;
+
+        top:50% !important;
+
+        transform:translateY(-50%) !important;
+
+    }
+
+    .hero-navigation{
+
+        left:50%;
+
+        top:auto;
+
+        bottom:90px;
+
+        transform:translateX(-50%) !important;
+
+        opacity:1 !important;
+
+    }
+
+    .hero-navigation nav{
+
+        flex-direction:row;
+
+        justify-content:center;
+
+        align-items:center;
+
+        gap:55px;
+
+        white-space:nowrap;
+
+    }
+
+    .hero-navigation a{
+
+        opacity:1 !important;
+
+        transform:none !important;
+
+    }
+
+    .scroll-space{
+
+        display:none;
+
+    }
+
+    footer{
+
+        display:none;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE LANDSCAPE
+   ========================================================== */
+
+@media (max-width:1024px)
+       and (max-height:600px)
+       and (orientation:landscape){
+
+    .hero{
+
+        inset:10px;
+
+        padding:30px;
+
+    }
+
+    .hero-content{
+
+    left:50%;
+
+    top:50% !important;
+
+    transform:translate(-50%,-50%) !important;
+
+    width:calc(100% - 60px);
+
+    max-width:520px;
+
+    text-align:center;
+
+}
+
+    .hero h1{
+
+        font-size:38px;
+
+        letter-spacing:2px;
+
+    }
+
+    .divider{
+
+    width:180px;
+
+    margin:22px auto 12px;
+
+}
+
+    .hero h2{
+
+        font-size:16px;
+
+        margin-bottom:30px;
+
+    }
+
+    .tagline{
+
+    font-size:15px;
+
+    line-height:1.2;
+
+    max-width:none;
+
+    white-space:nowrap;
+
+    margin:0 auto;
+
+}
+
+    .hero-navigation{
+
+        left:50%;
+
+        top:auto;
+
+        bottom:50px;
+
+        transform:translateX(-50%) !important;
+
+        opacity:1 !important;
+
+        width:calc(100% - 40px);
+
+    }
+
+    .hero-navigation nav{
+
+        gap:24px;
+
+    }
+
+    .hero-navigation a{
+
+        font-size:14px;
+
+        opacity:1 !important;
+
+        transform:none !important;
+
+    }
+
+    .scroll-space{
+
+        display:none;
+
+    }
+
+    footer{
+
+        display:none;
+
+    }
+
+}

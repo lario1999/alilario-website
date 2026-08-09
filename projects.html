@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Projects | Ali Lario</title>
+
+    <link rel="icon"
+          href="assets/icons/favicon.ico">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="assets/css/projects.css">
+
+</head>
+
+<body>
+
+<!-- MOBILE / TABLET HEADER -->
+<header class="mobile-header">
+
+    <a
+        href="index.html"
+        class="mobile-brand">
+
+        Ali Lario
+
+    </a>
+
+    <button
+        class="mobile-menu-button"
+        id="mobile-menu-button"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false">
+
+        ☰
+
+    </button>
+
+</header>
+
+<div class="page">
+
+    <!-- ========================================= -->
+    <!-- SIDEBAR -->
+    <!-- ========================================= -->
+
+    <aside class="sidebar">
+
+        <div>
+
+            <a
+                href="index.html"
+                class="brand">
+
+                <h1>Ali Lario</h1>
+
+                <div class="divider"></div>
+
+                <p>
+
+                    Photography &amp; Videography
+
+                </p>
+
+            </a>
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="projects.html"
+                    class="active">
+
+                    Projects
+
+                </a>
+
+                <a href="journal.html">
+
+                    Journal
+
+                </a>
+
+                <a href="about.html">
+
+                    About
+
+                </a>
+
+                <a href="contact.html">
+
+                    Contact
+
+                </a>
+
+            </nav>
+
+        </div>
+
+        <footer>
+
+            © 2026 Ali Lario
+
+            <br>
+
+            All Rights Reserved.
+
+        </footer>
+
+    </aside>
+
+    <!-- ========================================= -->
+    <!-- CONTENT -->
+    <!-- ========================================= -->
+
+    <main class="content">
+
+        <div class="categories">
+
+            <button
+                class="category"
+                data-category="architecture">
+
+                Architecture
+
+            </button>
+
+            <button
+                class="category"
+                data-category="corporate">
+
+                Corporate
+
+            </button>
+
+            <button
+                class="category"
+                data-category="wedding">
+
+                Wedding
+
+            </button>
+
+        </div>
+
+        <!-- ===================================== -->
+        <!-- PROJECT GALLERY -->
+        <!-- ===================================== -->
+
+        <section
+            class="projects-gallery"
+            id="projects-gallery">
+
+            <!-- Cards are generated automatically -->
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- PROJECT VIEWER -->
+<!-- ===================================================== -->
+
+<div
+    class="viewer"
+    id="viewer">
+
+    <!-- ========================================== -->
+    <!-- BACKDROP -->
+    <!-- ========================================== -->
+
+    <div class="viewer-backdrop"></div>
+
+    <!-- ========================================== -->
+    <!-- CONTAINER -->
+    <!-- ========================================== -->
+
+    <div class="viewer-container">
+
+        <!-- ====================================== -->
+        <!-- CLOSE -->
+        <!-- ====================================== -->
+
+        <button
+            class="viewer-close"
+            id="viewer-close"
+            aria-label="Close">
+
+            ×
+
+        </button>
+
+        <!-- ====================================== -->
+        <!-- CONTENT -->
+        <!-- ====================================== -->
+
+        <div class="viewer-content">
+
+            <!-- ============================== -->
+            <!-- GALLERY -->
+            <!-- ============================== -->
+
+            <section
+                class="viewer-gallery"
+                id="viewer-gallery">
+
+                <!-- Images injected by projects.js -->
+
+            </section>
+
+            <!-- ============================== -->
+            <!-- INFO -->
+            <!-- ============================== -->
+
+            <aside class="viewer-info">
+
+                <div class="info-wrapper">
+
+                    <h1 id="viewer-title"></h1>
+
+                    <div class="info-block">
+
+                        <span>Client</span>
+
+                        <p id="viewer-client"></p>
+
+                    </div>
+
+                    <div class="info-block">
+
+                        <span>Location</span>
+
+                        <p id="viewer-location"></p>
+
+                    </div>
+
+                    <div class="info-block">
+
+                        <span>Year</span>
+
+                        <p id="viewer-year"></p>
+
+                    </div>
+
+                    <div class="info-block">
+
+                        <span>Services</span>
+
+                        <p id="viewer-services"></p>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MOBILE / TABLET MENU -->
+<div
+    class="mobile-menu"
+    id="mobile-menu"
+    aria-hidden="true">
+
+    <button
+        class="mobile-menu-close"
+        id="mobile-menu-close"
+        type="button"
+        aria-label="Close menu">
+
+        ×
+
+    </button>
+
+    <nav class="mobile-menu-nav">
+
+        <a
+            href="projects.html?category=architecture"
+            data-mobile-category="architecture">
+            Architecture
+        </a>
+
+        <a
+            href="projects.html?category=corporate"
+            data-mobile-category="corporate">
+            Corporate
+        </a>
+
+        <a
+            href="projects.html?category=wedding"
+            data-mobile-category="wedding">
+            Wedding
+        </a>
+
+        <a href="journal.html">
+            Journal
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+    <div class="mobile-menu-footer">
+
+        © 2026 Ali Lario
+
+        <br>
+
+        All Rights Reserved.
+
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- PROJECT DATA -->
+<!-- ===================================================== -->
+
+<script src="assets/js/project-data.js"></script>
+
+<!-- ===================================================== -->
+<!-- PROJECTS -->
+<!-- ===================================================== -->
+
+<script src="assets/js/projects.js"></script>
+
+</body>
+
+</html>

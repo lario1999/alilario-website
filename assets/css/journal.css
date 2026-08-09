@@ -1,0 +1,209 @@
+/* ==========================================================
+   ALILARIO.COM
+   Journal
+========================================================== */
+
+
+/* ==========================================================
+   JOURNAL GRID
+========================================================== */
+
+#journal-gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:15px;
+
+    padding-top:40px;
+
+}
+
+
+/* ==========================================================
+   JOURNAL CARD
+========================================================== */
+
+#journal-gallery .project-card{
+
+    aspect-ratio:3 / 2;
+
+}
+
+
+/* ==========================================================
+   OVERLAY
+========================================================== */
+
+#journal-gallery .overlay-content{
+
+    left:40px;
+
+    right:40px;
+
+    bottom:36px;
+
+}
+
+
+/* ==========================================================
+   CARD TITLE
+========================================================== */
+
+#journal-gallery .overlay-content h2{
+
+    margin:0;
+
+    font-size:24px;
+
+    font-weight:500;
+
+    line-height:1.08;
+
+}
+
+
+/* ==========================================================
+   EXPLORE LABEL
+========================================================== */
+
+.journal-label{
+
+    display:block;
+
+    margin-top:12px;
+
+    font-size:10px;
+
+    font-weight:500;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    opacity:.85;
+
+}
+
+
+/* ==========================================================
+   VIEWER TITLE
+========================================================== */
+
+#viewer-title{
+
+    margin-bottom:34px;
+
+    font-size:2.2rem;
+
+    font-weight:500;
+
+    line-height:1.08;
+
+}
+
+
+/* ==========================================================
+   VIEWER STORY
+========================================================== */
+
+#viewer-story{
+
+    font-size:.92rem;
+
+    line-height:1.9;
+
+    color:#444;
+
+    white-space:pre-line;
+
+}
+
+/* ==========================================================
+   JOURNAL — TABLET
+========================================================== */
+
+@media (min-width:601px) and (max-width:1024px){
+
+    #journal-gallery{
+        padding-top:5px;
+    }
+
+    /* Card title */
+    #journal-gallery .overlay-content h2{
+        font-size:18px;
+    }
+
+    /* Explore label */
+    #journal-gallery .journal-label{
+        font-size:8px;
+    }
+
+}
+
+
+/* ==========================================================
+   JOURNAL — MOBILE
+========================================================== */
+
+@media (max-width:600px){
+
+    #journal-gallery{
+        padding-top:5px;
+    }
+
+    /* Card title */
+    #journal-gallery .overlay-content h2{
+        font-size:10px;
+    }
+
+    /* Explore label */
+    #journal-gallery .journal-label{
+        font-size:6px;
+    }
+
+    /* Viewer title */
+
+    #viewer-title{
+
+        font-size:1.3rem;
+
+    }
+
+}
+
+/* ==========================================================
+   JOURNAL — TABLET LANDSCAPE
+   ========================================================== */
+
+@media (min-width:1025px) and (max-width:1200px)
+       and (orientation:landscape){
+
+    #journal-gallery .project-overlay{
+
+        display:block !important;
+
+        opacity:1 !important;
+
+    }
+
+    #journal-gallery .overlay-content{
+
+        transform:translate(-12px, 120px);
+
+    }
+
+    #journal-gallery .overlay-content h2{
+
+        font-size:16px;
+
+    }
+
+    #journal-gallery .journal-label{
+
+        font-size:8px;
+
+    }
+
+}

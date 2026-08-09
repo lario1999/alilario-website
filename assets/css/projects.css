@@ -1,0 +1,2432 @@
+/* ==========================================================
+   ALILARIO.COM
+   Projects Page v4.3
+========================================================== */
+
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* ==========================================================
+   ROOT
+========================================================== */
+
+:root{
+
+    --white:#ffffff;
+    --black:#1f1f1f;
+    --gray:#7a7a7a;
+    --light:#bdbdbd;
+
+    --border:#ececec;
+
+    --transition:.35s ease;
+
+}
+
+
+/* ==========================================================
+   HTML & BODY
+========================================================== */
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:var(--white);
+
+    color:var(--black);
+
+    overflow-x:hidden;
+
+}
+
+
+/* ==========================================================
+   LINKS
+========================================================== */
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+
+/* ==========================================================
+   IMAGES
+========================================================== */
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+
+/* ==========================================================
+   PAGE LAYOUT
+========================================================== */
+
+.page{
+
+    display:grid;
+
+    grid-template-columns:340px 1fr;
+
+    min-height:100vh;
+
+}
+
+
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+
+.sidebar{
+
+    position:sticky;
+
+    top:0;
+
+    align-self:start;
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:38px 55px;
+
+    background:var(--white);
+
+}
+
+
+/* ==========================================================
+   BRAND
+========================================================== */
+
+.brand{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+.brand h1{
+
+    font-size:30px;
+
+    font-weight:600;
+
+    letter-spacing:3px;
+
+    line-height:.9;
+
+}
+
+
+.divider{
+
+    width:200px;
+
+    height:.5px;
+
+    background:var(--gray);
+
+    margin:24px 0 16px;
+
+}
+
+
+.brand p{
+
+    font-size:15px;
+
+    font-weight:300;
+
+    line-height:1.6;
+
+}
+
+
+/* ==========================================================
+   DESKTOP NAVIGATION
+========================================================== */
+
+.sidebar-nav{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+    margin-top:58px;
+
+}
+
+
+.sidebar-nav a{
+
+    position:relative;
+
+    width:max-content;
+
+    font-size:16px;
+
+    font-weight:300;
+
+    color:var(--gray);
+
+    transition:var(--transition);
+
+}
+
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active{
+
+    color:var(--black);
+
+}
+
+
+/* ==========================================================
+   SIDEBAR UNDERLINE
+========================================================== */
+
+.sidebar-nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:1px;
+
+    background:var(--black);
+
+    transform:translateX(-50%);
+
+    transition:var(--transition);
+
+}
+
+
+.sidebar-nav a:hover::after,
+.sidebar-nav a.active::after{
+
+    width:26px;
+
+}
+
+
+/* ==========================================================
+   SIDEBAR FOOTER
+========================================================== */
+
+.sidebar footer{
+
+    margin-top:auto;
+
+    padding-top:60px;
+
+    color:var(--light);
+
+    font-size:10px;
+
+    font-weight:300;
+
+    line-height:1.6;
+
+}
+
+
+/* ==========================================================
+   MAIN CONTENT
+========================================================== */
+
+.content{
+
+    padding:45px 90px 70px;
+
+}
+
+
+/* ==========================================================
+   CATEGORY NAVIGATION
+========================================================== */
+
+.categories{
+
+    display:flex;
+
+    gap:100px;
+
+    margin-bottom:60px;
+
+}
+
+
+/* ==========================================================
+   CATEGORY BUTTON
+========================================================== */
+
+.category{
+
+    position:relative;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+    font-size:16px;
+
+    font-weight:300;
+
+    color:var(--gray);
+
+    transition:var(--transition);
+
+}
+
+
+.category:hover,
+.category.active{
+
+    color:var(--black);
+
+}
+
+
+/* ==========================================================
+   CATEGORY UNDERLINE
+========================================================== */
+
+.category::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:1px;
+
+    background:var(--black);
+
+    transform:translateX(-50%);
+
+    transition:var(--transition);
+
+}
+
+
+.category:hover::after,
+.category.active::after{
+
+    width:34px;
+
+}
+
+
+/* ==========================================================
+   PROJECT GRID
+========================================================== */
+
+.projects-gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(320px,680px));
+
+    gap:60px;
+
+    align-items:start;
+
+}
+
+
+/* ==========================================================
+   PROJECT CARD
+========================================================== */
+
+.project-card{
+
+    position:relative;
+
+    display:block;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+}
+
+
+/* ==========================================================
+   PROJECT IMAGE
+========================================================== */
+
+.project-image{
+
+    overflow:hidden;
+
+}
+
+
+.project-image img{
+
+    width:100%;
+
+    height:auto;
+
+    transition:
+
+        transform .8s cubic-bezier(.22,1,.36,1),
+
+        filter .45s ease;
+
+}
+
+
+/* ==========================================================
+   PROJECT OVERLAY
+========================================================== */
+
+.project-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:34px;
+
+    background:linear-gradient(
+
+        to top,
+
+        rgba(0,0,0,.55),
+
+        rgba(0,0,0,.15),
+
+        transparent
+
+    );
+
+    opacity:0;
+
+    transition:.4s ease;
+
+}
+
+
+/* ==========================================================
+   OVERLAY CONTENT
+========================================================== */
+
+.overlay-content{
+
+    color:#fff;
+
+    transform:translateY(18px);
+
+    transition:.4s ease;
+
+}
+
+
+.overlay-content h2{
+
+    font-size:30px;
+
+    font-weight:400;
+
+    margin-bottom:8px;
+
+}
+
+
+.overlay-content p{
+
+    font-size:17px;
+
+    font-weight:300;
+
+}
+
+
+/* ==========================================================
+   DESKTOP HOVER
+========================================================== */
+
+.project-card:hover .project-image img{
+
+    transform:scale(1.05);
+
+}
+
+
+.project-card:hover .project-overlay{
+
+    opacity:1;
+
+}
+
+
+.project-card:hover .overlay-content{
+
+    transform:translateY(0);
+
+}
+
+
+/* ==========================================================
+   VIEWER OPEN — BACKGROUND
+========================================================== */
+
+.page.viewer-open{
+
+    filter:blur(8px);
+
+    transition:.35s ease;
+
+}
+
+
+/* ==========================================================
+   PROJECT VIEWER
+========================================================== */
+
+.viewer{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:opacity .45s ease;
+
+    z-index:1600;
+
+}
+
+
+.viewer.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+
+/* ==========================================================
+   VIEWER BACKDROP
+========================================================== */
+
+.viewer-backdrop{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(15,15,15,.40);
+
+    backdrop-filter:blur(14px);
+
+}
+
+
+/* ==========================================================
+   VIEWER CONTAINER
+========================================================== */
+
+.viewer-container{
+
+    position:relative;
+
+    width:min(1850px,97vw);
+
+    height:96vh;
+
+    background:#fff;
+
+    overflow:hidden;
+
+    border-radius:8px;
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.18);
+
+    transform:scale(.97);
+
+    opacity:0;
+
+    transition:
+
+        transform .7s cubic-bezier(.22,1,.36,1),
+
+        opacity .45s ease;
+
+}
+
+
+.viewer.active .viewer-container{
+
+    transform:scale(1);
+
+    opacity:1;
+
+}
+
+
+/* ==========================================================
+   VIEWER CONTENT — DESKTOP
+========================================================== */
+
+.viewer-content{
+
+    display:grid;
+
+    grid-template-columns:70% 30%;
+
+    height:100%;
+
+}
+
+
+/* ==========================================================
+   VIEWER GALLERY — DESKTOP
+========================================================== */
+
+.viewer-gallery{
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    padding:0;
+
+    background:#ffffff;
+
+    scroll-behavior:smooth;
+
+}
+
+
+.viewer-gallery img{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+    object-fit:contain;
+
+    margin-bottom:120px;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:
+
+        opacity .6s ease,
+
+        transform .6s ease;
+
+}
+
+
+.viewer-gallery img:last-child{
+
+    margin-bottom:24px;
+
+}
+
+
+.viewer.active .viewer-gallery img{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* ==========================================================
+   VIEWER INFORMATION — DESKTOP
+========================================================== */
+
+.viewer-info{
+
+    display:flex;
+
+    border-left:1px solid var(--border);
+
+    background:#ffffff;
+
+}
+
+
+.info-wrapper{
+
+    align-self:flex-start;
+
+    width:100%;
+
+    padding:80px 70px;
+
+    transform:translateX(40px);
+
+    opacity:0;
+
+    transition:
+
+        transform .6s ease .15s,
+
+        opacity .6s ease .15s;
+
+}
+
+
+.viewer.active .info-wrapper{
+
+    transform:translateX(0);
+
+    opacity:1;
+
+}
+
+
+/* ==========================================================
+   VIEWER TITLE
+========================================================== */
+
+.info-wrapper h1{
+
+    font-size:46px;
+
+    font-weight:500;
+
+    line-height:1.2;
+
+    margin-bottom:70px;
+
+}
+
+
+/* ==========================================================
+   INFORMATION BLOCK
+========================================================== */
+
+.info-block{
+
+    margin-bottom:42px;
+
+}
+
+
+.info-block:last-child{
+
+    margin-bottom:0;
+
+}
+
+
+.info-block span{
+
+    display:block;
+
+    margin-bottom:12px;
+
+    font-size:11px;
+
+    font-weight:500;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:var(--gray);
+
+}
+
+
+.info-block p{
+
+    font-size:20px;
+
+    font-weight:300;
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================================================
+   VIEWER CLOSE — DESKTOP
+========================================================== */
+
+.viewer-close{
+
+    position:absolute;
+
+    top:32px;
+
+    right:32px;
+
+    width:44px;
+
+    height:44px;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font-size:42px;
+
+    font-weight:300;
+
+    color:#111;
+
+    transition:.25s;
+
+    z-index:30;
+
+}
+
+
+.viewer-close:hover{
+
+    transform:rotate(90deg);
+
+    opacity:.6;
+
+}
+
+
+/* ==========================================================
+   VIEWER SCROLLBARS
+========================================================== */
+
+.viewer-gallery::-webkit-scrollbar,
+.viewer-info::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+
+.viewer-gallery::-webkit-scrollbar-thumb,
+.viewer-info::-webkit-scrollbar-thumb{
+
+    background:#d0d0d0;
+
+}
+
+
+/* ==========================================================
+   MOBILE / TABLET HEADER
+========================================================== */
+
+.mobile-header{
+
+    display:none;
+
+}
+
+
+.mobile-brand{
+
+    font-size:22px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    line-height:1;
+
+}
+
+
+.mobile-menu-button{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:36px;
+
+    height:36px;
+
+    padding:0;
+
+    border:none;
+
+    background:none;
+
+    color:var(--black);
+
+    font-family:inherit;
+
+    font-size:22px;
+
+    font-weight:300;
+
+    line-height:1;
+
+    cursor:pointer;
+
+}
+
+
+/* ==========================================================
+   MOBILE / TABLET MENU
+========================================================== */
+
+.mobile-menu{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:2000;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#ffffff;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:
+
+        opacity .3s ease,
+
+        visibility .3s ease;
+
+}
+
+
+.mobile-menu.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+
+/* ==========================================================
+   MENU CLOSE
+========================================================== */
+
+.mobile-menu-close{
+
+    position:absolute;
+
+    top:24px;
+
+    right:24px;
+
+    width:40px;
+
+    height:40px;
+
+    padding:0;
+
+    border:none;
+
+    background:none;
+
+    color:var(--black);
+
+    font-family:inherit;
+
+    font-size:28px;
+
+    font-weight:300;
+
+    line-height:1;
+
+    cursor:pointer;
+
+}
+
+
+/* ==========================================================
+   MENU NAVIGATION
+========================================================== */
+
+.mobile-menu-nav{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:28px;
+
+}
+
+
+.mobile-menu-nav a{
+
+    position:relative;
+
+    font-size:18px;
+
+    font-weight:300;
+
+    color:var(--gray);
+
+    transition:var(--transition);
+
+}
+
+
+.mobile-menu-nav a:hover{
+
+    color:var(--black);
+
+}
+
+
+.mobile-menu-nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-7px;
+
+    width:0;
+
+    height:1px;
+
+    background:var(--black);
+
+    transform:translateX(-50%);
+
+    transition:.3s ease;
+
+}
+
+
+.mobile-menu-nav a:hover::after{
+
+    width:24px;
+
+}
+
+
+/* ==========================================================
+   MENU FOOTER
+========================================================== */
+
+.mobile-menu-footer{
+
+    position:absolute;
+
+    left:24px;
+
+    bottom:24px;
+
+    color:var(--light);
+
+    font-size:10px;
+
+    font-weight:300;
+
+    line-height:1.6;
+
+}
+
+
+/* ==========================================================
+   TABLET
+   601px — 1024px
+========================================================== */
+
+@media (min-width:601px) and (max-width:1024px){
+
+    body{
+
+        padding:0;
+
+    }
+
+
+    /* ------------------------------------------------------
+       HEADER
+    ------------------------------------------------------ */
+
+    .mobile-header{
+
+        position:fixed;
+
+        top:0;
+
+        left:0;
+
+        right:0;
+
+        z-index:1500;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:space-between;
+
+        height:72px;
+
+        padding:0 32px;
+
+        background:rgba(255,255,255,.96);
+
+        border-bottom:1px solid var(--border);
+
+    }
+
+
+    .mobile-brand{
+
+        font-size:22px;
+
+        font-weight:600;
+
+        letter-spacing:2px;
+
+        line-height:1;
+
+    }
+
+
+    .mobile-menu-button{
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+        width:36px;
+
+        height:36px;
+
+        padding:0;
+
+        border:none;
+
+        background:none;
+
+        color:var(--black);
+
+        font-family:inherit;
+
+        font-size:22px;
+
+        font-weight:300;
+
+        line-height:1;
+
+        cursor:pointer;
+
+    }
+
+
+    /* ------------------------------------------------------
+       HIDE DESKTOP SIDEBAR
+    ------------------------------------------------------ */
+
+    .sidebar{
+
+        display:none;
+
+    }
+
+
+    /* ------------------------------------------------------
+       PAGE
+    ------------------------------------------------------ */
+
+    .page{
+
+        display:block;
+
+        min-height:100vh;
+
+    }
+
+
+    /* ------------------------------------------------------
+       CONTENT
+    ------------------------------------------------------ */
+
+    .content{
+
+        padding:112px 40px 60px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       CATEGORY FILTER
+    ------------------------------------------------------ */
+
+    .categories{
+
+        display:none;
+
+    }
+
+
+    /* ------------------------------------------------------
+       PROJECT / JOURNAL GRID
+    ------------------------------------------------------ */
+
+    .projects-gallery{
+
+        grid-template-columns:repeat(2,minmax(0,1fr));
+
+        gap:28px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       STATIC OVERLAY
+    ------------------------------------------------------ */
+
+    .project-overlay{
+
+        opacity:1;
+
+        padding:22px;
+
+        background:linear-gradient(
+
+            to top,
+
+            rgba(0,0,0,.48),
+
+            rgba(0,0,0,.10),
+
+            transparent
+
+        );
+
+    }
+
+
+    .overlay-content{
+
+        transform:none;
+
+    }
+
+
+    .overlay-content h2{
+
+        font-size:20px;
+
+        margin-bottom:5px;
+
+    }
+
+
+    .overlay-content p{
+
+        font-size:13px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       DISABLE HOVER
+    ------------------------------------------------------ */
+
+    .project-card:hover .project-image img{
+
+        transform:none;
+
+    }
+
+
+    .project-card:hover .project-overlay{
+
+        opacity:1;
+
+    }
+
+
+    .project-card:hover .overlay-content{
+
+        transform:none;
+
+    }
+
+
+    /* ======================================================
+       MOBILE / TABLET MENU
+    ====================================================== */
+
+    .mobile-menu{
+
+        position:fixed;
+
+        inset:0;
+
+        z-index:2000;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        justify-content:center;
+
+        background:#ffffff;
+
+        opacity:0;
+
+        visibility:hidden;
+
+        pointer-events:none;
+
+        transition:
+            opacity .3s ease,
+            visibility .3s ease;
+
+    }
+
+
+    .mobile-menu.active{
+
+        opacity:1;
+
+        visibility:visible;
+
+        pointer-events:auto;
+
+    }
+
+
+    .mobile-menu-close{
+
+        position:absolute;
+
+        top:24px;
+
+        right:24px;
+
+        width:40px;
+
+        height:40px;
+
+        padding:0;
+
+        border:none;
+
+        background:none;
+
+        color:var(--black);
+
+        font-family:inherit;
+
+        font-size:28px;
+
+        font-weight:300;
+
+        line-height:1;
+
+        cursor:pointer;
+
+    }
+
+
+    .mobile-menu-nav{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:28px;
+
+    }
+
+
+    .mobile-menu-nav a{
+
+        position:relative;
+
+        font-size:18px;
+
+        font-weight:300;
+
+        color:var(--gray);
+
+        transition:var(--transition);
+
+    }
+
+
+    .mobile-menu-nav a:hover{
+
+        color:var(--black);
+
+    }
+
+
+    .mobile-menu-footer{
+
+        position:absolute;
+
+        left:24px;
+
+        bottom:24px;
+
+        color:var(--light);
+
+        font-size:10px;
+
+        font-weight:300;
+
+        line-height:1.6;
+
+    }
+
+
+    /* ======================================================
+       PROJECT / JOURNAL VIEWER
+    ====================================================== */
+
+    .viewer{
+
+        align-items:center;
+
+    }
+
+
+    .viewer-container{
+
+        width:94vw;
+
+        height:92vh;
+
+        max-height:92vh;
+
+        overflow-y:auto;
+
+        overflow-x:hidden;
+
+        overscroll-behavior:contain;
+
+        -webkit-overflow-scrolling:touch;
+
+        border-radius:8px;
+
+    }
+
+
+    .viewer-content{
+
+        display:flex;
+
+        flex-direction:column;
+
+        height:auto;
+
+        min-height:100%;
+
+    }
+
+
+    .viewer-close{
+
+    position:sticky;
+
+    top:0;
+
+    padding-right:20px;
+
+    width:100%;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-end;
+
+    flex-shrink:0;
+
+    font-size:30px;
+
+    line-height:1;
+
+    background:#ffffff;
+
+    color:#111;
+
+    z-index:1000;
+
+}
+
+
+    .viewer-close:hover{
+
+        transform:none;
+
+        opacity:.6;
+
+    }
+
+
+    .viewer-gallery{
+
+        width:100%;
+
+        height:auto;
+
+        overflow:visible;
+
+        padding-top:20px;
+
+        scroll-behavior:auto;
+
+    }
+
+
+    .viewer-gallery img{
+
+        width:100%;
+
+        height:auto;
+
+        margin:0 0 28px;
+
+        opacity:1;
+
+        transform:none;
+
+        transition:none;
+
+    }
+
+
+    .viewer-gallery img:last-child{
+
+        margin-bottom:0;
+
+    }
+
+
+    .viewer-info{
+
+        width:100%;
+
+        display:block;
+
+        border-left:none;
+
+        border-top:1px solid var(--border);
+
+        overflow:visible;
+
+        flex:none;
+
+    }
+
+
+    .info-wrapper{
+
+        width:100%;
+
+        padding:42px 40px 50px;
+
+        transform:none;
+
+        opacity:1;
+
+        transition:none;
+
+    }
+
+
+    .viewer.active .info-wrapper{
+
+        transform:none;
+
+        opacity:1;
+
+    }
+
+
+    .info-wrapper h1{
+
+        font-size:36px;
+
+        line-height:1.1;
+
+        margin-bottom:38px;
+
+    }
+
+
+    .info-block{
+
+        margin-bottom:24px;
+
+    }
+
+
+    .info-block span{
+
+        margin-bottom:8px;
+
+        font-size:9px;
+
+        letter-spacing:2.5px;
+
+    }
+
+
+    .info-block p{
+
+        font-size:16px;
+
+        line-height:1.5;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+   600px AND BELOW
+========================================================== */
+
+@media (max-width:600px){
+
+    body{
+
+        padding:0;
+
+    }
+
+
+    /* ------------------------------------------------------
+       HEADER
+    ------------------------------------------------------ */
+
+    .mobile-header{
+
+        position:fixed;
+
+        top:0;
+
+        left:0;
+
+        right:0;
+
+        z-index:1500;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:space-between;
+
+        height:64px;
+
+        padding:0 22px;
+
+        background:rgba(255,255,255,.96);
+
+        border-bottom:1px solid var(--border);
+
+    }
+
+
+    .mobile-brand{
+
+        font-size:20px;
+
+        font-weight:600;
+
+        letter-spacing:2px;
+
+        line-height:1;
+
+    }
+
+
+    .mobile-menu-button{
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+        width:34px;
+
+        height:34px;
+
+        padding:0;
+
+        border:none;
+
+        background:none;
+
+        color:var(--black);
+
+        font-family:inherit;
+
+        font-size:21px;
+
+        font-weight:300;
+
+        line-height:1;
+
+        cursor:pointer;
+
+    }
+
+
+    /* ------------------------------------------------------
+       HIDE DESKTOP SIDEBAR
+    ------------------------------------------------------ */
+
+    .sidebar{
+
+        display:none;
+
+    }
+
+
+    /* ------------------------------------------------------
+       PAGE
+    ------------------------------------------------------ */
+
+    .page{
+
+        display:block;
+
+        min-height:100vh;
+
+    }
+
+
+    /* ------------------------------------------------------
+       CONTENT
+    ------------------------------------------------------ */
+
+    .content{
+
+        padding:94px 22px 40px;
+
+    }
+
+
+    .categories{
+
+        display:none;
+
+    }
+
+
+    /* ------------------------------------------------------
+       ONE COLUMN
+    ------------------------------------------------------ */
+
+    .projects-gallery{
+
+        grid-template-columns:1fr;
+
+        gap:28px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       STATIC OVERLAY
+    ------------------------------------------------------ */
+
+    .project-overlay{
+
+        opacity:1;
+
+        padding:18px;
+
+        background:linear-gradient(
+
+            to top,
+
+            rgba(0,0,0,.50),
+
+            rgba(0,0,0,.10),
+
+            transparent
+
+        );
+
+    }
+
+
+    .overlay-content{
+
+        transform:none;
+
+    }
+
+
+    .overlay-content h2{
+
+        font-size:18px;
+
+        font-weight:400;
+
+        margin-bottom:5px;
+
+    }
+
+
+    .overlay-content p{
+
+        font-size:12px;
+
+        font-weight:300;
+
+    }
+
+
+    .project-card:hover .project-image img{
+
+        transform:none;
+
+    }
+
+
+    .project-card:hover .project-overlay{
+
+        opacity:1;
+
+    }
+
+
+    .project-card:hover .overlay-content{
+
+        transform:none;
+
+    }
+
+
+    /* ======================================================
+       MOBILE MENU
+    ====================================================== */
+
+    .mobile-menu{
+
+        position:fixed;
+
+        inset:0;
+
+        z-index:2000;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        justify-content:center;
+
+        background:#ffffff;
+
+        opacity:0;
+
+        visibility:hidden;
+
+        pointer-events:none;
+
+        transition:
+            opacity .3s ease,
+            visibility .3s ease;
+
+    }
+
+
+    .mobile-menu.active{
+
+        opacity:1;
+
+        visibility:visible;
+
+        pointer-events:auto;
+
+    }
+
+
+    .mobile-menu-close{
+
+        position:absolute;
+
+        top:15px;
+
+        right:18px;
+
+        width:40px;
+
+        height:40px;
+
+        padding:0;
+
+        border:none;
+
+        background:none;
+
+        color:var(--black);
+
+        font-family:inherit;
+
+        font-size:26px;
+
+        font-weight:300;
+
+        line-height:1;
+
+        cursor:pointer;
+
+    }
+
+
+    .mobile-menu-nav{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:22px;
+
+    }
+
+
+    .mobile-menu-nav a{
+
+        position:relative;
+
+        font-size:15px;
+
+        font-weight:300;
+
+        color:var(--gray);
+
+        transition:var(--transition);
+
+    }
+
+
+    .mobile-menu-nav a:hover{
+
+        color:var(--black);
+
+    }
+
+
+    .mobile-menu-footer{
+
+        position:absolute;
+
+        left:24px;
+
+        bottom:24px;
+
+        color:var(--light);
+
+        font-size:8px;
+
+        font-weight:300;
+
+        line-height:1.6;
+
+    }
+
+
+    /* ======================================================
+       VIEWER
+    ====================================================== */
+
+    .viewer{
+
+        align-items:center;
+
+    }
+
+
+    .viewer-container{
+
+        width:calc(100vw - 24px);
+
+        height:calc(100vh - 24px);
+
+        max-height:calc(100vh - 24px);
+
+        overflow-y:auto;
+
+        overflow-x:hidden;
+
+        overscroll-behavior:contain;
+
+        -webkit-overflow-scrolling:touch;
+
+        border-radius:4px;
+
+    }
+
+
+    .viewer-content{
+
+        display:flex;
+
+        flex-direction:column;
+
+        height:auto;
+
+        min-height:100%;
+
+    }
+
+
+    .viewer-close{
+
+    position:sticky;
+
+    top:0;
+
+    padding-right:20px;
+
+    width:100%;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-end;
+
+    flex-shrink:0;
+
+    font-size:30px;
+
+    line-height:1;
+
+    background:#ffffff;
+
+    color:#111;
+
+    z-index:1000;
+
+}
+
+
+    .viewer-close:hover{
+
+        transform:none;
+
+        opacity:.6;
+
+    }
+
+
+    .viewer-gallery{
+
+        width:100%;
+
+        height:auto;
+
+        overflow:visible;
+
+        padding-top:20px;
+
+        scroll-behavior:auto;
+
+    }
+
+
+    .viewer-gallery img{
+
+        width:100%;
+
+        height:auto;
+
+        margin:0 0 24px;
+
+        opacity:1;
+
+        transform:none;
+
+        transition:none;
+
+    }
+
+
+    .viewer-gallery img:last-child{
+
+        margin-bottom:0;
+
+    }
+
+
+    .viewer-info{
+
+        width:100%;
+
+        display:block;
+
+        border-left:none;
+
+        border-top:1px solid var(--border);
+
+        overflow:visible;
+
+        flex:none;
+
+    }
+
+
+    .info-wrapper{
+
+        width:100%;
+
+        padding:30px 22px 38px;
+
+        transform:none;
+
+        opacity:1;
+
+        transition:none;
+
+    }
+
+
+    .viewer.active .info-wrapper{
+
+        transform:none;
+
+        opacity:1;
+
+    }
+
+
+    .info-wrapper h1{
+
+        font-size:30px;
+
+        line-height:1.1;
+
+        margin-bottom:32px;
+
+    }
+
+
+    .info-block{
+
+        margin-bottom:20px;
+
+    }
+
+
+    .info-block span{
+
+        font-size:8px;
+
+        letter-spacing:2px;
+
+        margin-bottom:7px;
+
+    }
+
+
+    .info-block p{
+
+        font-size:15px;
+
+        line-height:1.45;
+
+    }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL PHONES
+   380px AND BELOW
+========================================================== */
+
+@media (max-width:380px){
+
+    .mobile-header{
+
+        padding:0 18px;
+
+    }
+
+
+    .mobile-brand{
+
+        font-size:18px;
+
+    }
+
+
+    .content{
+
+        padding-left:18px;
+
+        padding-right:18px;
+
+    }
+
+
+    .projects-gallery{
+
+        gap:22px;
+
+    }
+
+
+    .project-overlay{
+
+        padding:15px;
+
+    }
+
+
+    .overlay-content h2{
+
+        font-size:17px;
+
+    }
+
+
+    .overlay-content p{
+
+        font-size:11px;
+
+    }
+
+
+    .mobile-menu-nav{
+
+        gap:24px;
+
+    }
+
+
+    .mobile-menu-nav a{
+
+        font-size:17px;
+
+    }
+
+
+    .viewer-container{
+
+        width:calc(100vw - 16px);
+
+        height:calc(100vh - 16px);
+
+        max-height:calc(100vh - 16px);
+
+    }
+
+
+    .viewer-close{
+
+        width:42px;
+
+        height:42px;
+
+        font-size:25px;
+
+    }
+
+
+    .viewer-gallery{
+
+        padding-top:42px;
+
+    }
+
+
+    .info-wrapper{
+
+        padding:26px 18px 34px;
+
+    }
+
+
+    .info-wrapper h1{
+
+        font-size:28px;
+
+        margin-bottom:28px;
+
+    }
+
+
+    .info-block{
+
+        margin-bottom:18px;
+
+    }
+
+
+    .info-block p{
+
+        font-size:14px;
+
+    }
+
+}
+
+/* ==========================================================
+   PROJECTS — TABLET LANDSCAPE
+========================================================== */
+
+@media (min-width:1025px) and (max-width:1200px)
+and (orientation:landscape){
+
+    #projects-gallery .project-overlay{
+        display:block !important;
+        opacity:1 !important;
+    }
+
+    #projects-gallery .overlay-content{
+        transform:translate(-20px, 120px);
+    }
+
+    #projects-gallery .overlay-content h2{
+        font-size:16px;
+    }
+
+    #projects-gallery .overlay-content p{
+        font-size:10px;
+    }
+
+
+    /* VIEWER — CENTER ON FULL VIEWPORT */
+
+    .viewer{
+        position:fixed;
+        inset:0;
+        width:100vw;
+        height:100vh;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .viewer-container{
+        width:94vw;
+        height:92vh;
+        max-height:92vh;
+        overflow-y:auto;
+        overflow-x:hidden;
+        overscroll-behavior:contain;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    .viewer-info .info-wrapper{
+    padding:100px 40px 50px;
+}
+
+.viewer-info #viewer-title{
+    font-size:20px;
+    line-height:1.1;
+    margin-bottom:30px;
+}
+    
+
+}
