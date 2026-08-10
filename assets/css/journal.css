@@ -154,13 +154,19 @@
     }
 
     /* Card title */
+
+    #journal-gallery .overlay-content{
+        transform: translate(-10px, 10px);
+    }
+
     #journal-gallery .overlay-content h2{
-        font-size:10px;
+        font-size:9px;
     }
 
     /* Explore label */
     #journal-gallery .journal-label{
-        font-size:6px;
+        font-size:5px;
+        margin-top:7px;
     }
 
     /* Viewer title */
