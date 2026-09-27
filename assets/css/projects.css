@@ -373,7 +373,7 @@ img{
 
     grid-template-columns:repeat(2,minmax(320px,680px));
 
-    gap:60px;
+    gap:15px;
 
     align-items:start;
 
@@ -696,6 +696,19 @@ img{
 
 }
 
+/* YouTube video */
+
+.project-video{
+    width:100%;
+    margin-bottom:24px;
+}
+
+.project-video iframe{
+    display:block;
+    width:100%;
+    aspect-ratio:16 / 9;
+    border:none;
+}
 
 .viewer.active .viewer-gallery img{
 
