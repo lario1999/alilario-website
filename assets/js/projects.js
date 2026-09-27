@@ -407,6 +407,28 @@ function openProject(projectId){
         }
     );
 
+    if(project.video){
+
+    const videoWrapper =
+        document.createElement("div");
+
+    videoWrapper.className =
+        "project-video";
+
+    videoWrapper.innerHTML = `
+        <iframe
+            src="https://www.youtube.com/embed/${project.video}"
+            title="${project.title} video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+    `;
+
+    gallery.appendChild(videoWrapper);
+
+}
+
 
     gallery.scrollTop = 0;
 
@@ -543,7 +565,7 @@ document.addEventListener(
 
         if(
             category === "corporate" ||
-            category === "wedding"
+            category === "people"
         ){
 
             renderProjects(category);
